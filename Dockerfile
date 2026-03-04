@@ -3,7 +3,7 @@ WORKDIR /app
 COPY composer.json composer.json
 RUN composer install --no-dev --optimize-autoloader --no-scripts
 
-FROM php:8.2-apache
+FROM php:8.4-apache
 RUN apt-get update && apt-get install -y libzip-dev && docker-php-ext-install zip && rm -rf /var/lib/apt/lists/*
 RUN a2enmod rewrite
 

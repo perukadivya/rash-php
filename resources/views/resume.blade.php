@@ -1,0 +1,20 @@
+@extends('layouts.base')
+@section('title', 'Resume | Prashanth Kumar Kadasi')
+@section('content')
+<div class="container" style="position:relative;z-index:1;">
+    <div class="row"><div class="col-12"><h2>Resume</h2><p class="hero-subtitle" style="font-size:1.1rem;margin-bottom:0.5rem;">Data Analyst & AI Developer</p><div style="color:#a0a0b0;margin-bottom:2rem;">📍 Hyderabad, India</div></div></div>
+    <div class="row"><div class="col-12 mb-4"><div class="card"><div class="card-header">📋 Summary</div><div class="card-body"><p>Data Analyst & AI Developer with hands-on experience in LLM fine-tuning, model deployment, prompt engineering, and lightweight on-device inference. Skilled in Python, SQL, data engineering, and building AI-powered applications.</p></div></div></div></div>
+    <div class="row"><div class="col-12 mb-4"><div class="card"><div class="card-header">💼 Experience</div><div class="card-body">
+        <h5 style="margin-bottom:0.25rem;">{{ $experience['company'] }}</h5>
+        <div style="margin-bottom:1rem;"><span style="font-weight:600;color:#667eea;">{{ $experience['role'] }}</span><span style="color:#a0a0b0;"> | {{ $experience['period'] }} | {{ $experience['location'] }}</span></div>
+        <ul style="padding-left:1.25rem;">@foreach($experience['highlights'] as $h)<li style="margin-bottom:0.5rem;color:#c0c0d0;">{{ $h }}</li>@endforeach</ul>
+    </div></div></div></div>
+    <div class="row"><div class="col-12 mb-4"><div class="card"><div class="card-header">🛠️ Technical Skills</div><div class="card-body">
+        @foreach($resumeSkills as $cat => $items)<div style="margin-bottom:0.75rem;"><strong style="color:#667eea;">{{ $cat }}: </strong><span style="color:#c0c0d0;">{{ $items }}</span></div>@endforeach
+    </div></div></div></div>
+    <div class="row"><div class="col-12 mb-4"><div class="card"><div class="card-header">🚀 Portfolio Projects</div><div class="card-body">
+        @foreach($resumeProjects as $p)<div><strong style="color:#fff;">{{ $p['name'] }}</strong><span style="color:#667eea;font-size:0.9rem;"> | {{ $p['tech'] }}</span><p style="color:#a0a0b0;margin-bottom:0.75rem;margin-top:0.25rem;">{{ $p['desc'] }}</p></div>@endforeach
+    </div></div></div></div>
+    <div class="row"><div class="col-12 mb-4"><div class="card"><div class="card-header">🎓 Education</div><div class="card-body"><h5 style="margin-bottom:0.25rem;">Anurag Group of Institutions</h5><p style="color:#a0a0b0;margin-bottom:0;">M. Pharmacy - Pharmaceutical Analysis and Quality Assurance</p><span style="color:#667eea;font-size:0.9rem;">JNTUH | May 2012</span></div></div></div></div>
+</div>
+@endsection
